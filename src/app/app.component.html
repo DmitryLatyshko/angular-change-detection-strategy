@@ -1,14 +1,35 @@
 <nav>
-  <div>
-    <a class="navbar-brand" [routerLink]="''"><b>Main</b></a>
-  </div>
-  <div>
-    <ul>
-      <li>
-        <a class="nav-link" [routerLink]="'/'"></a>
-      </li>
-    </ul>
-  </div>
+	<div>
+		<a class="navbar-brand" [routerLink]="''"><b>Main</b></a>
+	</div>
+	<div>
+		<ul>
+			<li>
+				<a class="nav-link" [routerLink]="'/default'">Default</a>
+			</li>
+			<li>
+				<a class="nav-link" [routerLink]="'/onpush'">OnPush</a>
+			</li>
+		</ul>
+	</div>
 </nav>
 <hr/>
+<ng-container *ngIf="isShowHiddenOnPushRoutes">
+	<nav>
+		<div>
+			<ul>
+				<li>
+					<a class="nav-link" [routerLink]="'onpush/route-one'">Route one</a>
+				</li>
+				<li>
+					<a class="nav-link" [routerLink]="'onpush/route-two'">Route two</a>
+				</li>
+				<li>
+					<a class="nav-link" [routerLink]="'onpush/route-three'">Route three</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<hr/>
+</ng-container>
 <router-outlet></router-outlet>

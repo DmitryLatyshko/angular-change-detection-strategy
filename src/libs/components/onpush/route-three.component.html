@@ -1,0 +1,59 @@
+﻿<h2>3. Ручинй запуск виявлення змін.</h2>
+
+<pre>
+Angular надає нам три методи самостійного запуску механізму виявлення змін і ми можемо викликати їх в потрібних нам місцях.
+</pre>
+
+<div>
+	<hr />
+</div>
+
+<route-three-one></route-three-one>
+
+<div>
+	<hr />
+</div>
+
+<div class="dl-block one-block">
+	<pre><code [innerText]="dlBlockOne"></code></pre>
+</div>
+
+<pre>
+Перший метод це <strong>detectChanges()</strong>, він говорить Angular запустити виявлення змін в компоненті та його потомках.
+</pre>
+
+<div>
+	<hr />
+</div>
+
+<route-three-two></route-three-two>
+
+<div>
+	<hr />
+</div>
+
+<div class="dl-block one-block">
+	<pre><code [innerText]="dlBlockTwo"></code></pre>
+</div>
+
+<pre>
+Другий метод <strong>ApplicationRef.tick()</strong> говорить Angular запустити виявлення змін для всього застосунку.
+<code class="extend-code" [innerText]="dlBlockTwoCode"></code>
+</pre>
+
+<route-three-three></route-three-three>
+
+<div>
+	<hr />
+</div>
+
+<div class="dl-block two-blocks">
+	<pre><code [innerText]="dlBlockThreeOuter"></code></pre>
+	<pre><code [innerText]="dlBlockThreeInner"></code></pre>
+</div>
+
+<pre>
+Третій метод <strong>markForCheck()</strong>, котрий <strong>не</strong> триггерить запуск виявлення змін. Замість цього він позначає компонент
+і всіх його батьків, що вони повинні бути перевірені в поточному або наступному циклі виявлення змін.
+<code class="extend-code" [innerText]="dlBlockThreeCode"></code>
+</pre>
