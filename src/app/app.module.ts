@@ -11,7 +11,7 @@ import {
 	DefaultInnerComponent,
 	DefaultOuterComponent,
 	OnPushRoutingModule,
-	ReoteOneInnerComponent,
+	RouteOneInnerComponent,
 	RouteOneOuterComponent,
 	RouteThreeComponent,
 	RouteThreeOneComponent,
@@ -53,7 +53,7 @@ const defaultComponents = [
 const onPushComponents = [
 	RouteOneComponent,
 	RouteOneOuterComponent,
-	ReoteOneInnerComponent,
+	RouteOneInnerComponent,
 	RouteTwoComponent,
 	RouteTwoOneComponent,
 	RouteTwoTwoComponent,

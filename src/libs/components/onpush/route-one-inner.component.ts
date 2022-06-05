@@ -12,7 +12,7 @@ let triggerCounter: number = 0;
 	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ReoteOneInnerComponent implements OnInit{
+export class RouteOneInnerComponent implements OnInit{
 	@Input()
 	public config: any;
 	public get triggerCounter(): number {

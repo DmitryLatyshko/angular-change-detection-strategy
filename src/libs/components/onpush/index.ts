@@ -1,6 +1,6 @@
 ﻿export * from './route-one.component';
 export * from './route-one-outer.component';
-export * from './reote-one-inner.component';
+export * from './route-one-inner.component';
 export * from './route-two.component';
 export * from './route-two-one.component';
 export * from './route-two-two.component';
