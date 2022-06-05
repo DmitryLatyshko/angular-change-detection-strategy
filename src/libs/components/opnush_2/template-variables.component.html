@@ -1,0 +1,48 @@
+﻿<template-variables-outer>
+	<template-variables-inner></template-variables-inner>
+</template-variables-outer>
+
+<div>
+	<hr />
+</div>
+
+<div class="dl-block two-blocks">
+	<pre><code [innerText]="dlBlockOuter"></code></pre>
+	<pre><code [innerText]="dlBlockInner"></code></pre>
+</div>
+
+<div class="dl-block one-block">
+	<pre><code [innerText]="dlBlockAll"></code></pre>
+</div>
+
+<pre>
+Мабудь, ви гадаєте, що Angular через 3 секунди оновить представлення <strong>inner</strong> компонента новим значення.
+Ми вже бачили що якщо оновити посилання в OnPush компоненті, це повинно запустити механізм виявлення змін, чи не так?
+Нажаль, в даному прикладі це не працює. Angular не знає, чи ми оновили властивість в <strong>inner</strong> компоненті.
+</pre>
+<pre>
+Приклад:
+<code class="extend-code" [innerText]="dlBlockCode"></code>
+Оскільки ми явно визначили <strong>input</strong> параметр в шаблоні, Angular створить <strong>updateRenderer()</strong> функцію, котра відслідковує зміни значень параметрів в кожному циклу виявлення змін.
+</pre>
+
+<div>
+	<hr />
+</div>
+
+<pre>
+Простим рішення в такому випадку буде створення сеттеру і виклик <strong>markForCheck()</strong>.
+</pre>
+
+<template-variables-outer-v2>
+	<template-variables-inner-v2></template-variables-inner-v2>
+</template-variables-outer-v2>
+
+<div class="dl-block two-blocks">
+	<pre><code [innerText]="dlBlockOuterV2"></code></pre>
+	<pre><code [innerText]="dlBlockInnerV2"></code></pre>
+</div>
+
+<div>
+	<hr />
+</div>

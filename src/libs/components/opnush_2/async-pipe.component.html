@@ -1,0 +1,37 @@
+﻿<pre>
+Async pipe підписується на спостерігаємий об'єкт чи проміс та повертає останнє віддане їх значення.
+</pre>
+
+<async-pipe-outer></async-pipe-outer>
+
+<div>
+	<hr />
+</div>
+
+<div class="dl-block two-blocks">
+	<pre><code [innerText]="dlBlockOuter"></code></pre>
+	<pre><code [innerText]="dlBlockInner"></code></pre>
+</div>
+
+<pre>
+Після натискання на кнопку, ми не побачимо оновлення пресдавлення. Це пов'язано з тим, що ні одне з описаних нами вище умов не виникло.
+Із-за цього Angular не буде перевіряти компонент в поточному циклі виявлення змін.
+</pre>
+
+<div>
+	<hr />
+</div>
+
+<async-pipe-outer-v2></async-pipe-outer-v2>
+
+<div class="dl-block two-blocks">
+	<pre><code [innerText]="dlBlockOuterV2"></code></pre>
+	<pre><code [innerText]="dlBlockInnerV2"></code></pre>
+</div>
+
+<pre>
+Як ми бачимо, тепер представлення оновлюється. Коли проходить нове значення, async pipe відмічає компонент як необхідний до перевірки.
+<code class="extend-code" [innerText]="dlBlockV2Code"></code>
+Angular викликає <strong>markForCheck()</strong>, із-за цього представлення оновлюється навіть коли посилання не змінилося.
+Якщо компонент залежить тільки від вхідних параметрів, і вони спостерігаємі, то цей компонент може змінитися тільки якщо один з параметрів генерує подію.
+</pre>

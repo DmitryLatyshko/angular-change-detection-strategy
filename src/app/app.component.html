@@ -10,6 +10,9 @@
 			<li>
 				<a class="nav-link" [routerLink]="'/onpush'">OnPush</a>
 			</li>
+			<li>
+				<a class="nav-link" [routerLink]="'/2-onpush'">OnPush 2</a>
+			</li>
 		</ul>
 	</div>
 </nav>
@@ -26,6 +29,24 @@
 				</li>
 				<li>
 					<a class="nav-link" [routerLink]="'onpush/route-three'">Route three</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<hr/>
+</ng-container>
+<ng-container *ngIf="isShowHiddenOnPushRoutes2">
+	<nav>
+		<div>
+			<ul>
+				<li>
+					<a class="nav-link" [routerLink]="'2-onpush/async-pipe'">Async pipe</a>
+				</li>
+				<li>
+					<a class="nav-link" [routerLink]="'2-onpush/template-variables'">Template variables</a>
+				</li>
+				<li>
+					<a class="nav-link" [routerLink]="'2-onpush/example'">Example</a>
 				</li>
 			</ul>
 		</div>

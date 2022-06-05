@@ -1,0 +1,53 @@
+﻿<pre>
+Після того як ми зрозуміли (сподіваюсь) всю міць <strong>OnPush</strong>, ми можемо створити більш оптимізований застосунок.
+Чім більше компонентів з <strong>OnPush</strong> стратегією ми маємо, тим менше перевірок буде виконувати Angular.
+
+Розглянемо реальний приклад.
+	Допустимо у нас є <strong>example-todos</strong> компонент, в якому визначено властивість <strong>todos</strong> з декоратором <strong>Input</strong>.
+</pre>
+
+<example-root></example-root>
+
+<div>
+	<hr />
+</div>
+
+<div class="dl-block two-blocks">
+	<pre><code [innerText]="dlBlockOuter"></code></pre>
+	<pre><code [innerText]="dlBlockInner"></code></pre>
+</div>
+
+<pre>
+Недостатком даного прикладу являється те, що при натисканні кнопки <strong>Add</strong>, Angular буде перевіряти на зміни кожне ToDo.
+І при першому натисканні ми побачимо в консолі три логи.
+
+В прикладі вище робиться тільки одна перевірка, але представте собі компонент із реального великого застосунку, з декількома умовами і прив'язками даних (ngIf, ngClass, вирази, і т.п.).
+Це може суттєво впливати на продуктивність.
+
+<strong>Ми запускаємо виявлення змін без причини</strong>
+</pre>
+
+<div>
+	<hr />
+</div>
+
+<pre>
+Ефективним рішенням буде створити компонент з <strong>OnPush</strong> стратегією для конкретного <strong>ToDo</strong>.
+</pre>
+
+<example-root-v2></example-root-v2>
+
+<div class="dl-block one-block">
+	<pre><code [innerText]="dlBlockOuterV2"></code></pre>
+</div>
+
+<div class="dl-block two-blocks">
+	<pre><code [innerText]="dlBlockInnerV2"></code></pre>
+	<pre><code [innerText]="dlBlockInnerV2Inner"></code></pre>
+</div>
+
+<pre>
+Тепер при кліку на кнопки, ми побачимо тільки один лог. Оскільки ні один input параметр інших <strong>ToDo</strong> не змінився, їх представлення не буде перевірятися.
+
+Також логічне розділення компонентів зробить ваш код більш читабельнішим та перевикористовуваним.
+</pre>

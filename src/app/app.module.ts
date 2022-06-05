@@ -7,10 +7,22 @@ import {RouterModule, Routes} from '@angular/router';
 import {AppComponent} from './app.component';
 import {MainComponent} from './pages/main/main.component';
 import {
+	AsyncPipeComponent,
+	AsyncPipeInnerComponent,
+	AsyncPipeInnerV2Component,
+	AsyncPipeOuterComponent,
+	AsyncPipeOuterV2Component,
 	DefaultComponent,
 	DefaultInnerComponent,
 	DefaultOuterComponent,
+	ExampleComponent,
+	ExampleInnerComponent,
+	ExampleInnerV2Component, ExampleInnerV2InnerComponent,
+	ExampleOuterComponent,
+	ExampleOuterV2Component,
+	OnPush2RoutingModule,
 	OnPushRoutingModule,
+	RouteOneComponent,
 	RouteOneInnerComponent,
 	RouteOneOuterComponent,
 	RouteThreeComponent,
@@ -21,9 +33,13 @@ import {
 	RouteThreeTwoComponent,
 	RouteTwoComponent,
 	RouteTwoOneComponent,
-	RouteTwoTwoComponent
+	RouteTwoTwoComponent,
+	TemplateVariablesComponent,
+	TemplateVariablesInnerComponent,
+	TemplateVariablesInnerV2Component,
+	TemplateVariablesOuterComponent,
+	TemplateVariablesOuterV2Component
 } from "../libs";
-import {RouteOneComponent} from "../libs/components/onpush/route-one.component";
 
 const appRoutes: Routes = [
 	{
@@ -40,8 +56,12 @@ const appRoutes: Routes = [
 	},
 	{
 		path: 'onpush',
-		redirectTo: '/onpush/route-one'
-	}
+		redirectTo: '/onpush/route-one',
+	},
+	{
+		path: '2-onpush',
+		redirectTo: '/2-onpush/async-pipe',
+	},
 ];
 
 const defaultComponents = [
@@ -65,17 +85,38 @@ const onPushComponents = [
 	RouteThreeThreeInnerComponent,
 ];
 
+const onPush2Components = [
+	AsyncPipeComponent,
+	AsyncPipeOuterComponent,
+	AsyncPipeInnerComponent,
+	AsyncPipeOuterV2Component,
+	AsyncPipeInnerV2Component,
+	TemplateVariablesComponent,
+	TemplateVariablesOuterComponent,
+	TemplateVariablesInnerComponent,
+	TemplateVariablesOuterV2Component,
+	TemplateVariablesInnerV2Component,
+	ExampleComponent,
+	ExampleOuterComponent,
+	ExampleInnerComponent,
+	ExampleOuterV2Component,
+	ExampleInnerV2Component,
+	ExampleInnerV2InnerComponent,
+];
+
 @NgModule({
 	declarations: [
 		AppComponent,
 		MainComponent,
 		defaultComponents,
-		onPushComponents
+		onPushComponents,
+		onPush2Components
 	],
 	imports: [
 		CommonModule,
 		BrowserModule,
 		OnPushRoutingModule,
+		OnPush2RoutingModule,
 		BrowserAnimationsModule,
 		RouterModule.forRoot(appRoutes, {relativeLinkResolution: 'legacy'}),
 	],

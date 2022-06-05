@@ -9,10 +9,11 @@ import {Router} from "@angular/router";
 })
 export class AppComponent {
 	public get isShowHiddenOnPushRoutes(): boolean {
-		if (this.router.url.startsWith('/onpush')) {
-			return true;
-		}
-		return false;
+		return this.router.url.startsWith('/onpush');
+	}
+
+	public get isShowHiddenOnPushRoutes2(): boolean {
+		return this.router.url.startsWith('/2-onpush');
 	}
 
 	constructor(protected readonly router: Router) {
